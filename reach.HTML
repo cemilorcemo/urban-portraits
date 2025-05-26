@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reach Us</title>
+    <style>
+        *     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Courier New;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+        }
+        .header div {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+        .header a {
+            text-decoration: none;
+            color: black;
+        }
+        .content {
+            max-width: 800px;
+            padding: 20px;
+            text-align: justify;
+        }
+        .image-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .search-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .search-popup input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .search-popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">URBAN PORTRÄITS</div>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> 
+    <div class="header">
+        <div><a href="index.html">HOME</a></div>
+        <div><a href="who.html">IS ABOUT</a></div>
+        <div><a href="reach.html">REACH</a></div>
+    </div>
+    <div class="content">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div id="searchPopup" class="search-popup">
+        <h3>Search</h3>
+        <input type="text" placeholder="Type here...">
+        <button onclick="closeSearchPopup()">Close</button>
+    </div>
+    <div style="font-size: 10px; text-align: center; margin-top: 30px;">
+        &copy; Cemo 2025
+    </div>
+    <script>
+        function openSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'block';
+        }
+        function closeSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'none';
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Porträits</title>
+    <style>
+        * {
+            margin: 10;"
+            padding: 10;
+            box-sizing:border-box;}
+        body {
+            font-family: Courier New;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+        }
+        .header div {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+        .header a {
+            text-decoration: none;
+            color: black;
+        }
+        .flowing-text-bar {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-top: 0.5px solid black;
+            background-color: #ffffff; /* Optional: background color */
+            padding: 20px 0; /* Increased padding for more space */
+        }
+        .flowing-text {
+            position: absolute;
+            white-space: nowrap;
+            animation: flow 40s linear infinite; /* Slower animation with infinite loop */
+            font-size: 18px;
+            font-weight: default;
+            line-height: 1; /* Added line height to space out the text */
+        }
+        @keyframes flow {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .content {
+            max-width: 1800px;
+            padding: 20px;
+            text-align: justify;
+            flex: 0.5;
+            margin-bottom: 5px; /* Reduced margin to decrease the space */
+        }
+        .grid-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 5px; /* Reduced margin to bring the title closer */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 90%; /* Reduced width for better alignment */
+            margin-top: 20px; /* Reduced margin to move grid items up */
+            margin-bottom: 20px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        .grid-item {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            border-left: 1px solid black;
+            min-height: 150px;
+            background-color: #f9f9f9; /* Optional: background color for grid items */
+            transition: background-color 0.3s;
+        }
+        .grid-item:first-child {
+            border-left: none;
+        }
+        .grid-item p {
+            margin-bottom: 20px;
+        }
+        .grid-item img {
+            width: 90%; /* 30% smaller */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .search-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .search-popup input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .search-popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-family: Courier New, monospace;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        button:hover {
+            text-decoration: underline;
+        }
+        #play { background: #28a745; color: white; }
+        #pause { background: #dc3545; color: white; }
+    </style>
+</head>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+<body>
+    <div class="title-bar">URBAN PORTRÄITS</div>
+    <div class="header">
+        <div><a href="index.html">HOME</a></div>
+        <div><a href="who.html">IS ABOUT</a></div>
+        <div><a href="reach.html">REACH</a></div>
+    </div>
+
+    <div class="content" style="display: flex; flex-direction: column; align-items: center;">
+      <h2 style="text-align: center;">Vienna, 27.05.2025</h2>
+      <p style="text-align: center; margin-bottom: 20px;">In Vienna, I started walking without purpose.</p>
+      <p style="text-align: center; margin-bottom: 20px;">No destination, no goal — just streets, corners, sky.</p>
+      <img src="1.jpeg" alt="Urban view 1" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+      <p style="text-align: center; margin-bottom: 20px;">
+        At first, I thought I was learning the city.<br>
+        But I was really learning the shape of my own silence.<br>
+        How long I could go without speaking.<br>
+        How much I mistook distraction for desire.
+      </p>
+      <p style="text-align: center; margin-bottom: 20px;">
+        There was a bench by the canal where I sat most evenings.<br>
+        Not to think — but to let the thinking settle, like dust.
+      </p>
+      <img src="2.jpeg" alt="Urban view 2" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+      <img src="3.jpeg" alt="Urban view 3" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+      <p style="text-align: center; margin-bottom: 20px;">
+        I didn’t become happier.<br>
+        Just quieter inside.<br>
+        Which was stranger, and harder.<br>
+        Some part of me softened there —<br>
+        Not broken, just less sharp.<br>
+        Like stone touched by water for a long time.
+      </p>
+    </div>
+
+    <div id="searchPopup" class="search-popup">
+        <h3>Search</h3>
+        <input type="text" placeholder="Type here...">
+        <button onclick="closeSearchPopup()">Close</button>
+    </div>
+
+    <div style="font-size: 10px; text-align: center; margin-top: 30px;">
+        &copy; Cemo 2025
+    </div>
+    
+    <script>
+        function openSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'block';
+        }
+        function closeSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

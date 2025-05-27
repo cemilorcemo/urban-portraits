@@ -60,10 +60,16 @@
         }
         .content {
             max-width: 1200px;
-            padding: 20px;
             text-align: justify;
             flex: 0.5;
             margin-bottom: 5px; /* Reduced margin to decrease the space */
+        }
+        .expression-block {
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100px auto; /* Small background */
+            padding-top: 60px; /* Pushes text down 2-3 lines */
         }
         .grid-title {
             text-align: center;
@@ -149,18 +155,20 @@
     <div class="header">
         <div><a href="index.html">HOME</a></div>
         <div><a href="who.html">IS ABOUT</a></div>
-        <div><a href="reach.HTML">REACH</a></div>
+        <div><a href="reach.html">REACH</a></div>
     </div>
     <div class="content">
-        <h2>Space for expression of spatial feelings, belongings, societies</h2>
-        <p> Every ground has a different texture, we want to make a small mold of it. 
-        </p>
+        <div class="expression-block">
+            <h2>Space for expression of spatial feelings, belongings, societies</h2>
+            <p> Every ground has a different texture, we want to make a small mold of it,
+            </p>
+        </div>
     </div>
     <div class="grid-title">2025</div>
     <div class="grid-container">
         <div class="grid-item">
             <p>Vienna</p>
-            <img src="bag-image.png" alt="931 Bag by Rams">
+            <a href="vie.html"><img src="bag-image.png" alt="931 Bag by Rams"></a>
         </div>
         <div class="grid-item">
             <p>Tehran</p>
@@ -168,7 +176,7 @@
         </div>
         <div class="grid-item">
             <p>İstanbul</p>
-            <img src="bag-image.png" alt="931 Bag by Rams">
+            <a href="ist.html"><img src="bag-image.png" alt="931 Bag by Rams"></a>
         </div>
         <div class="grid-item">
             <p>Seoul</p>

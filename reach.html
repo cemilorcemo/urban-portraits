@@ -66,6 +66,23 @@
             margin-top: 10px;
             padding: 5px 10px;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input, textarea, button {
+            font-family: Courier New;
+            padding: 8px;
+            border: 1px solid black;
+        }
+
+        button {
+            background: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -79,10 +96,19 @@
     </div>
     <div class="content">
         <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="4" required></textarea>
+        <p style="margin-top: 15px; margin-bottom: 20px; font-size: 14px; line-height: 1.5;">
+            IF YOU WANT TO CONTRIBUTE,<br>
+            SEND YOUR PIECE WITH:<br>
+            CITY · YEAR · AGE<br>
+            (named or anonymous)<br>
+            to:<br>
+            <strong>urbanportraits@protonmail.com</strong>
+        </p>
+        <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+            <input type="text" name="name" placeholder="Your Name (or Anonymous)">
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message / Link to your work" rows="4" required></textarea>
             <button type="submit">Send</button>
         </form>
     </div>

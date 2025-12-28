@@ -160,6 +160,21 @@
                 width: 80%;
             }
         }
+        .blink {
+            animation: smoothBlink 2.5s ease-in-out infinite;
+        }
+
+        @keyframes smoothBlink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <link rel="stylesheet" href="styles.css">
@@ -181,19 +196,19 @@
 <div class="grid-title">2026</div>
 <div class="grid-container">
     <div class="grid-item">
-        <p>New York</p>
+        <p class="blink">Open Call</p>
         <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
     </div>
     <div class="grid-item">
-        <p></p>
+        <p class="blink">Open Call</p>
         <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
     </div>
     <div class="grid-item">
-        <p>Paris</p>
+        <p class="blink">Open Call</p>
         <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
     </div>
     <div class="grid-item">
-        <p>Cape Town</p>
+        <p class="blink">Open Call</p>
         <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
     </div>
 </div>
@@ -204,16 +219,16 @@
             <a href="vie.html"><img src="empty.png" alt="Vienna 2025"></a>
         </div>
         <div class="grid-item">
-            <p>Tehran</p>
-            <a href="vie.html"><img src="empty.png" alt="Open Space"></a>
+            <p class="blink">Open Call</p>
+            <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
         </div>
         <div class="grid-item">
             <p>İstanbul</p>
             <a href="ist.html"><img src="empty.png" alt="İstanbul 2025"></a>
         </div>
         <div class="grid-item">
-            <p>Seoul</p>
-            <a href="vie.html"><img src="empty.png" alt="Open Space"></a>
+            <p class="blink">Open Call</p>
+            <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
         </div>
     </div>
 

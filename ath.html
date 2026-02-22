@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Porträits</title>
+    <style>
+        * {
+            margin: 10;"
+            padding: 10;
+            box-sizing:border-box;}
+        body {
+            font-family: Courier New;   
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+        }
+        .header div {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+        .header a {
+            text-decoration: none;
+            color: black;
+        }
+        .flowing-text-bar {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-top: 0.5px solid black;
+            background-color: #ffffff; /* Optional: background color */
+            padding: 20px 0; /* Increased padding for more space */
+        }
+        .flowing-text {
+            position: absolute;
+            white-space: nowrap;
+            animation: flow 40s linear infinite; /* Slower animation with infinite loop */
+            font-size: 18px;
+            font-weight: default;
+            line-height: 1; /* Added line height to space out the text */
+        }
+        @keyframes flow {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .content {
+            max-width: 1800px;
+            padding: 20px;
+            text-align: justify;
+            flex: 0.5;
+            margin-bottom: 5px; /* Reduced margin to decrease the space */
+        }
+        .grid-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 5px; /* Reduced margin to bring the title closer */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 90%; /* Reduced width for better alignment */
+            margin-top: 20px; /* Reduced margin to move grid items up */
+            margin-bottom: 20px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        .grid-item {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            border-left: 1px solid black;
+            min-height: 150px;
+            background-color: #f9f9f9; /* Optional: background color for grid items */
+            transition: background-color 0.3s;
+        }
+        .grid-item:first-child {
+            border-left: none;
+        }
+        .grid-item p {
+            margin-bottom: 20px;
+        }
+        .grid-item img {
+            width: 90%; /* 30% smaller */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .search-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .search-popup input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .search-popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-family: Courier New, monospace;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        button:hover {
+            text-decoration: underline;
+        }
+        #play { background: #28a745; color: white; }
+        #pause { background: #dc3545; color: white; }
+    </style>
+</head>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+<body>
+    <div class="title-bar">URBAN PORTRÄITS</div>
+    <div class="header">
+        <div><a href="index.html">HOME</a></div>
+        <div><a href="who.html">IS ABOUT</a></div>
+        <div><a href="reach.html">REACH</a></div>
+    </div>
+
+    <div class="content" style="display: flex; flex-direction: column; align-items: center;">
+      <h2 style="text-align: center;">Athens, November 2025</h2>
+      <p style="text-align: center;">Vicky Dimitropoulou, 36</p>
+      <p style="text-align: center; margin-bottom: 20px;">Moving around Athens: an act of resistance </p>
+      <img src="Athens1.jpeg" alt="Urban view 1" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+      <p style="
+      text-align: center;
+      margin: 0 auto 20px;
+      max-width: 520px;
+      line-height: 1.4;
+      ">
+        In November 2025, I began work on my in-progress project, Memories of Resistance, a walking performance in the city of Athens. <br>
+        <p style="
+        text-align: center;
+        margin: 0 auto 20px;
+        max-width: 520px;
+        line-height: 1.4;
+        ">
+        The work deals with the resistance of war disabled people to the Nazi occupation and their collaborators during World War II and brings it to the present day by linking it to the genocide of the Palestinians. <br>
+        <p style="
+text-align: center;
+margin: 0 auto 20px;
+max-width: 520px;
+line-height: 1.4;
+">
+        To prepare for the performance, I had to walk, or rather, explore the route I would follow in the city. 
+<p style="
+text-align: center;
+margin: 0 auto 20px;
+max-width: 520px;
+line-height: 1.4;
+">
+<img src="Athens2.jpeg" alt="Urban view 1" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+
+        I have lived in Athens for many years and am familiar with its challenging sidewalks, but embarking on the process of walking around the city without rushing and attempting to find the most accessible route (for all the different bodies that would be with me during the performance) to reach my destination, it was a completely different process from the everyday experience of getting around the city. <br>
+</p>
+<img src="Athens3.jpeg" alt="Urban view 2" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+
+<p style="
+text-align: center;
+margin: 0 auto 20px;
+max-width: 520px;
+line-height: 1.4;
+">
+I quickly realised that I couldn't trust the map and the directions it gave me. Although I decided to take an alternative route, I came across: <br>
+chairs and tables from different cafés on the sidewalk <br>
+broken tiles on the sidewalk <br>
+signposts in the middle of the sidewalk <br>
+trash cans and poles in the middle of the sidewalk no accessible ramp to cross from one sidewalk to the other sidewalks so narrow that a wheelchair couldn't fit <br>
+<img src="Athens4.jpeg" alt="Urban view 3" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+ 
+</p>
+<p style="
+text-align: center;
+margin: 0 auto 20px;
+max-width: 520px;
+line-height: 1.4;
+">        For a route that normally (?) should have taken 21 minutes, it took me almost an hour. So, where the performance concerned a specific theme, historical memory and its preservation, I realised that it also deals with a present-day issue: how we, as disabled people, move and exist in public spaces, especially in a city like Athens, where accessibility is conspicuous by its absence. <br>
+        <img src="Athens5.jpeg" alt="Urban view 3" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+        <p style="
+        text-align: center;
+        margin: 0 auto 20px;
+        max-width: 520px;
+        line-height: 1.4;
+        ">            A few days before I did the performance, they asked me why I wanted to do it in the public space and get into this challenging process of getting around Athens. I told them that the fact that a group of visibly disabled people (blind, in a wheelchair, deaf, etc.) is out and about in Athens is an act of resistance against the prevailing ableism and the lack of accessibility policies.  <br>
+          </p>
+          <img src="Athens6.jpeg" alt="Urban view 3" style="width: 250px; max-width: 80vw; display: block; margin: 20px auto;">
+
+          <p style="
+          text-align: center;
+          margin: 0 auto 20px;
+          max-width: 520px;
+          line-height: 1.4;
+          ">            We reclaim the visibility of our bodies in the public space, even if it seems that there is no room for us there. <br>
+
+      </p>
+    </div>
+
+    <div id="searchPopup" class="search-popup">
+        <h3>Search</h3>
+        <input type="text" placeholder="Type here...">
+        <button onclick="closeSearchPopup()">Close</button>
+    </div>
+
+    <div style="font-size: 10px; text-align: center; margin-top: 30px;">
+        &copy; Cemo 2025
+    </div>
+    
+    <script>
+        function openSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'block';
+        }
+        function closeSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

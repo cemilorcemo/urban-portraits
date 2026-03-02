@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Porträits</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Courier New;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+        }
+        .header div {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+        .header a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .language-switch {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .language-switch a {
+            text-decoration: none;
+            color: black;
+            margin-left: 5px;
+        }
+
+        .language-switch a:hover {
+            text-decoration: underline;
+        }
+        .flowing-text-bar {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-top: 0.5px solid black;
+            background-color: #ffffff; /* Optional: background color */
+            padding: 20px 0; /* Increased padding for more space */
+        }
+        .flowing-text {
+            position: absolute;
+            white-space: nowrap;
+            animation: flow 40s linear infinite; /* Slower animation with infinite loop */
+            font-size: 18px;
+            font-weight: default;
+            line-height: 1; /* Added line height to space out the text */
+        }
+        @keyframes flow {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .content {
+            max-width: 1200px;
+            text-align: justify;
+            flex: 0.5;
+            margin-bottom: 5px; /* Reduced margin to decrease the space */
+        }
+        .expression-block {
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 100px auto; /* Small background */
+            padding-top: 60px; /* Pushes text down 2-3 lines */
+        }
+        .grid-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 5px; /* Reduced margin to bring the title closer */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            width: 90%; /* Reduced width for better alignment */
+            margin-top: 20px; /* Reduced margin to move grid items up */
+            margin-bottom: 20px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        .grid-item {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            border-left: 1px solid black;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .grid-item:first-child {
+            border-left: none;
+        }
+        .grid-item p {
+            margin-bottom: 20px;
+            min-height: 24px;
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .search-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .search-popup input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .search-popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-family: Courier New, monospace;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        button:hover {
+            text-decoration: underline;
+        }
+        #play { background: #28a745; color: white; }
+        #pause { background: #dc3545; color: white; }
+        @media (max-width: 600px) {
+            .grid-container {
+                width: 100%;
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .grid-item img {
+                width: 80%;
+            }
+        }
+        .blink {
+            animation: smoothBlink 2.5s ease-in-out infinite;
+        }
+
+        @keyframes smoothBlink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+<body>
+    <div class="title-bar">URBAN PORTRÄITS</div>
+    <div class="language-switch">
+        <a href="index.html">EN</a> /
+        <a href="index_pt.html">PT</a> /
+        <a href="index_es.html">ES</a> /
+        <a href="index_de.html">DE</a>
+    </div>
+    <div class="header">
+        <div><a href="index.html">INICIO</a></div>
+        <div><a href="who.html">SOBRE</a></div>
+        <div><a href="reach.html">PARTICIPAR</a></div>
+    </div>
+    <div class="content">
+        <div class="expression-block">
+            <h2>Un espacio donde pertenencia, territorio y memoria colectiva toman forma.</h2>
+            <p> Cada suelo guarda su propria textura. Tomamos fragmentos para hacer visible la presencia y la identidad.
+            </p>
+        </div>
+    </div>
+<div class="grid-title">2026</div>
+<div class="grid-container">
+    <div class="grid-item">
+        <p class="blink">Open Call</p>
+        <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
+    </div>
+    <div class="grid-item">
+        <p class="blink">Open Call</p>
+        <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
+    </div>
+    <div class="grid-item">
+        <p class="blink">Open Call</p>
+        <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
+    </div>
+    <div class="grid-item">
+        <p class="blink">Open Call</p>
+        <a href="reach.html"><img src="empty.png" alt="Open Space"></a>
+    </div>
+</div>
+    <div class="grid-title">2025</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <p>Vienna</p>
+            <a href="vie.html"><img src="empty.png" alt="Vienna 2025"></a>
+        </div>
+        <div class="grid-item">
+            <p class="blink">Taipei</p>
+            <a href="taipei.html"><img src="empty.png" alt="Open Space"></a>
+        </div>
+        <div class="grid-item">
+            <p>İstanbul</p>
+            <a href="ist.html"><img src="empty.png" alt="İstanbul 2025"></a>
+        </div>
+        <div class="grid-item">
+            <p class="blink">Athens</p>
+            <a href="ath.html"><img src="empty.png" alt="Open Space"></a>
+        </div>
+    </div>
+
+    <div id="searchPopup" class="search-popup">
+        <h3>Search</h3>
+        <input type="text" placeholder="Type here...">
+        <button onclick="closeSearchPopup()">Close</button>
+    </div>
+
+    <div class="flowing-text-bar">
+        <div class="flowing-text">
+            Space for expression of spatial feelings, belongings, societies, Espaço para expressar sentimentos espaciais, pertences e sociedades, Espace d'expression de sentiments spatiaux, d'appartenances, de sociétés, Mekânla kurulan ilişkilerin kimlikte bıraktığı izleri kaydeden kolektif bir hafıza, Ein Ort, an dem Zugehörigkeiten, Raum und kollektive Erinnerung Gestalt annehmen, Espacio para la expresión de sentimientos espaciales, pertenencias, sociedades, مساحة للتعبير عن المشاعر المكانية والممتلكات والمجتمعات 
+        </div>
+    </div>
+
+    <div style="font-size: 10px; text-align: center; margin-top: 30px;">
+        &copy; Cemo 2025
+    </div>
+    
+    <script>
+        function openSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'block';
+        }
+        function closeSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

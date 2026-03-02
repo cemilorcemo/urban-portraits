@@ -36,11 +36,18 @@
             color: black;
         }
 
-        .language-switch {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
+        .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.language-switch {
+    font-size: 14px;
+}
+        
 
         .language-switch a {
             text-decoration: none;
@@ -196,8 +203,15 @@
 <link rel="stylesheet" href="styles.css">
 <script src="script.js" defer></script>
 <body>
-    <div class="title-bar">URBAN PORTRÄITS</div>
-    <div class="language-switch">
+    <div class="top-bar">
+        <div class="title-bar">URBAN PORTRÄITS</div>
+        <div class="language-switch">
+            <a href="index.html">EN</a> /
+            <a href="index_pt.html">PT</a> /
+            <a href="index_es.html">ES</a> /
+            <a href="index_de.html">DE</a>
+        </div>
+    </div>
         <a href="index.html">EN</a> /
         <a href="index_pt.html">PT</a> /
         <a href="index_es.html">ES</a> /

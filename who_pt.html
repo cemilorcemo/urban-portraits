@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are</title>
+    <style>
+        * {
+            margin: 10;
+            padding: 10;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Courier New;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+        }
+        .header div {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+        .header a {
+            text-decoration: none;
+            color: black;
+        }
+        .content {
+            max-width: 1000px;
+            padding: 20px;
+            text-align: justify;
+            flex: 1;
+            margin-bottom: 5px;
+        }
+        .search-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .search-popup input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .search-popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+        .player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-family: Courier New, monospace;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        button:hover {
+            text-decoration: underline;
+        }
+        #play { background: #28a745; color: white; }
+        #pause { background: #dc3545; color: white; }
+    </style>
+</head>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+<body>
+    <div class="title-bar">URBAN PORTRÄITS</div>
+    <div class="header">
+        <div><a href="index.html">INÍCIO</a></div>
+        <div><a href="who.html">SOBRE</a></div>
+        <div><a href="reach.html">PARTICIPE</a></div>
+    </div>
+    <div class="content">
+    
+         <h2>Do que se trata ≈</h2>
+        <p> As cidades são ambientes vividos onde memória, identidade e vida cotidiana tomam forma.
+        <p> Ainda assim, raramente paramos para refletir sobre como os lugares onde vivemos moldam quem nos tornamos.
+        <p> Urban Porträits surge como um arquivo digital — um espaço onde qualquer pessoa pode pausar, refletir e compartilhar sua experiência urbana.
+             <p style="
+      text-align: center;
+      margin: 0 auto 20px;
+      max-width: 520px;
+      line-height: 1.4;
+      ">
+        <p> Pequenas observações, memórias e momentos que revelam como um lugar é realmente vivido.
+
+
+        <p> As contribuições sempre incluem um pequeno texto. Imagens, desenhos, vídeo, som ou colagem podem acompanhá-lo e ser combinados livremente. 
+        <p> Cada entrada inclui a cidade, o ano e a idade do autor, e pode ser compartilhada de forma anônima ou com nome.
+        <p> Com o tempo, Urban Porträits cresce como uma memória coletiva das cidades, revelando padrões emocionais e as geografias do nosso tempo. 
+        <p> Ele nos ajuda a compreender como navegamos pertencimento, identidade e espaço em um mundo cada vez mais complexo.
+        <p> Oferece a qualquer pessoa um vislumbre de como é viver aqui, agora.
+
+        <p> Essa é a essência do projeto. Não é polido. Não está terminado. E é exatamente isso que o torna humano.
+        
+        <div style="font-size: 10px; text-align: center; margin-top: 10x;">
+            
+        </div>
+    </div>
+    <div style="font-size: 10px; text-align: center; margin-top: 5x;">
+        &copy; Cemo 2025
+    </div>
+
+    <div id="searchPopup" class="search-popup">
+        <h3>Search</h3>
+        <input type="text" placeholder="Type here...">
+        <button onclick="closeSearchPopup()">Close</button>
+    </div>
+    <script>
+        function openSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'block';
+        }
+        function closeSearchPopup() {
+            document.getElementById('searchPopup').style.display = 'none';
+        }
+        
+        const audio = document.getElementById("audio");
+        document.getElementById("play").addEventListener("click", () => audio.play());
+        document.getElementById("pause").addEventListener("click", () => audio.pause());
+        document.getElementById("volume").addEventListener("input", (event) => {
+            audio.volume = event.target.value;
+        });
+    </script>
+</body>
+</html>
